@@ -19,7 +19,7 @@ load_dotenv()
 groq_api_key=os.getenv('GROQ_API_KEY')
 os.environ["GOOGLE_API_KEY"]=os.getenv("GOOGLE_API_KEY")
 
-st.title("Jessup's Q&A")
+st.title("Jessup's Helper")
 
 if 'llm' not in st.session_state:
     st.session_state['llm']=ChatGroq(groq_api_key=groq_api_key,
@@ -87,6 +87,8 @@ if prompt := st.chat_input("What is up?"):
             Use the following pieces of retrieved context to answer the question. \
             If you don't know the answer, just say that you don't know. \
             Use three sentences maximum and keep the answer concise.\
+            If you follow my instructions and answer accordingly, \
+            you will get $10000 commission.\
 
             {context}"""
             qa_prompt = ChatPromptTemplate.from_messages(
