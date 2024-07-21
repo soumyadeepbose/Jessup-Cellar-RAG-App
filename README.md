@@ -4,7 +4,7 @@ Jessup's Helper is a Retrieval Based Chatbot that uses a pre-trained Llama3-8b m
 
 ## Live Demo
 
-The project is hosted on Streamlit and can be accessed [here](https://retrieval-based-chatbot.herokuapp.com/).
+The project is hosted on Streamlit and can be accessed [here](https://jessup-cellar.streamlit.app/).
 
 ## Getting Started
 
