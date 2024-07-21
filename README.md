@@ -1,4 +1,4 @@
-# Jessup's Helper
+# Jessup's Helper 🤖
 
 Jessup's Helper is a Retrieval Based Chatbot that uses a pre-trained Llama3-8b model to generate responses to user input. Groq has been used for a near instant inference because of the high token speed, and Google Gen AI Studio API has been used to get the embeddings. The model uses a PDF file for information retrieval and generation of responses based on the context. The PDF file can be found in the 'pdfs' folder.
 
