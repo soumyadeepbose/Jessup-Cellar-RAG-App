@@ -114,7 +114,7 @@ if prompt := st.chat_input("What is up?"):
 
             response = conversational_rag_chain.invoke(
                 {"input": prompt},
-                config={"configurable": {"session_id": "abc123"}}, 
+                config={"configurable": {"session_id": "lol123"}}, 
             )
 
             st.write(response['answer'])
