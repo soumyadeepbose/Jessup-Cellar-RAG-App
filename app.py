@@ -23,7 +23,7 @@ st.title("Jessup's Helper")
 
 if 'llm' not in st.session_state:
     st.session_state['llm']=ChatGroq(groq_api_key=groq_api_key,
-                                     # model_name="mixtral-8x7b-32768")
+                                     # model_name="mixtral-8x7b-32768") # Too slow
                                      model_name="Llama3-8b-8192")
 
 if "messages" not in st.session_state:
@@ -45,11 +45,11 @@ def vector_embedding():
         st.session_state.loader=PyPDFDirectoryLoader("./pdfs") ## Data Ingestion
         st.session_state.docs=st.session_state.loader.load() ## Document Loading
         st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1500,chunk_overlap=200) ## Chunk Creation
-        st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:20]) #splitting
-        st.session_state.vectors=FAISS.from_documents(st.session_state.final_documents,st.session_state.embeddings) #vector OpenAI embeddings
+        st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:20]) # Splitting the document
+        st.session_state.vectors=FAISS.from_documents(st.session_state.final_documents,st.session_state.embeddings) # Vector embeddings
         # st.session_state.memory_chain = ConversationBufferWindowMemory(
         #     memory_key="chat_history", input_key="question", output_key="answer", return_messages=True, k=50
-        # )        
+        # )
 
 vector_embedding()
 
